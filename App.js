@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, Text, View, Button, TextInput } from 'react-native';
+
+import styles from './Styles';
 
 const instructions = Platform.select({
   ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
@@ -8,29 +10,13 @@ const instructions = Platform.select({
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome</Text>
+        <Text style={styles.instructions}>Please enter your GitHub username.</Text>
+        <View style={styles.form}>
+          <TextInput style={styles.text}>Username</TextInput>
+          <Button style={styles.button} title="Submit" />
+        </View>
+      </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
