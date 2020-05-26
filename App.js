@@ -8,6 +8,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Container imports
 import Home from './src/containers/Home/index';
 import Password from './src/containers/Password/index';
+import Profile from './src/containers/Profile/index';
+import List from './src/containers/List/index';
 
 const Stack = createStackNavigator();
 
@@ -15,8 +17,10 @@ export default function App() {
   return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" component={Home} />
+          <Stack.Screen name="Login" component={Home}  />
           <Stack.Screen name="Password" component={Password}/>
+          <Stack.Screen name="Welcome" component={Profile} />
+          <Stack.Screen name="Commit List" component={List} />
         </Stack.Navigator>
       </NavigationContainer>
   );

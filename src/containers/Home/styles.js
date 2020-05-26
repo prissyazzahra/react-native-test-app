@@ -14,12 +14,14 @@ export default StyleSheet.create({
       padding: 20,
     },
     welcome: {
+      color: 'black',
       fontSize: 40,
       textAlign: 'center',
       fontWeight: 'bold',
       margin: 10,
     },
     instructions: {
+      color: 'black',
       textAlign: 'center',
       color: '#333333',
       marginBottom: 5,
