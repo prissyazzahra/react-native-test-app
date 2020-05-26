@@ -1,12 +1,17 @@
 import { StyleSheet } from 'react-native';
 
+// const colors = {
+//   'blue'
+// }
+
 export default StyleSheet.create({
     container: {
-      flex: 3,
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'stretch',
       backgroundColor: '#F5FCFF',
       color: 'black',
+      padding: 20,
     },
     welcome: {
       fontSize: 40,
@@ -19,17 +24,20 @@ export default StyleSheet.create({
       color: '#333333',
       marginBottom: 5,
     },
-    form: {
-      flex: 3,
-      margin: 30,
-    },
     text: {
       marginBottom: 10,
       borderColor: 'steelblue',
-      borderBottomWidth: 0.5,
+      borderBottomWidth: StyleSheet.hairlineWidth,
     },
     button: {
-      borderRadius: 20,
-      backgroundColor: 'red',
+      alignItems: "center",
+      backgroundColor: "#1D66E6",
+      padding: 10,
+      fontWeight: '500',
+      borderRadius: 100,
+    },
+    buttonText: {
+      color: 'white',
+      fontWeight: 'bold'
     }
   });
