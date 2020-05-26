@@ -7,7 +7,7 @@ import styles from './styles';
 
 export default function Home({ navigation }) {
   const [username, setUsername] = React.useState('');
-  
+
   return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome</Text>
@@ -15,7 +15,8 @@ export default function Home({ navigation }) {
           Please enter your GitHub username.
         </Text>
         <View>
-          <TextInput placeholder="Username"
+          <TextInput
+            placeholder="Username"
             onChangeText={username => setUsername(username)}
             defaultValue={username}
             textContentType="username"

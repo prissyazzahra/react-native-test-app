@@ -19,8 +19,8 @@ export default function App() {
         <Stack.Navigator initialRouteName="Login">
           <Stack.Screen name="Login" component={Home}  />
           <Stack.Screen name="Password" component={Password}/>
-          <Stack.Screen name="Welcome" component={Profile} />
-          <Stack.Screen name="Commit List" component={List} />
+          <Stack.Screen name="Welcome" options={{ headerLeft: null }} component={Profile} />
+          <Stack.Screen name="Commit List" options={{ headerLeft: null }} component={List} />
         </Stack.Navigator>
       </NavigationContainer>
   );

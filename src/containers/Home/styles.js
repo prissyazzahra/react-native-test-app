@@ -10,7 +10,6 @@ export default StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'stretch',
       backgroundColor: '#F5FCFF',
-      color: 'black',
       padding: 20,
     },
     welcome: {
