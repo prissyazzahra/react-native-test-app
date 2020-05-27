@@ -30,11 +30,7 @@ export default function App() {
             }}
             component={Profile}
           />
-          <Stack.Screen
-            name="Commit List"
-            options={{ headerLeft: null, gesturesEnabled: false, }}
-            component={List}
-          />
+          <Stack.Screen name="Commit List" component={List} />
         </Stack.Navigator>
       </NavigationContainer>
   );

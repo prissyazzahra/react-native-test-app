@@ -22,15 +22,14 @@ class Profile extends React.Component {
 
   async fetchProfile() {
     const user = this.props.route.params.username;
-    return fetch(`https://api.github.com/users/${user}`)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({ data: json })
-      })
-      .catch(error => {
-        this.state({ error })
-        throw error;
-      })
+    await fetch(`https://api.github.com/users/${user}`)
+    .then((response) => response.json())
+    .then((json) => {
+      return this.setState({ data: json });
+    })
+    .catch((error) => {
+      this.setState({ error })
+    });
   }
 
   componentDidMount() {
@@ -46,15 +45,25 @@ class Profile extends React.Component {
     if (this.state.error) {
       return (
         <View style={styles.errorContainer}>
-          <Text>Something went wrong with error of {this.state.error}</Text>
-          <Text>Go back</Text>
+          <Text style={styles.errorText}>Something went wrong</Text>
+          <Text
+            style={styles.nakedButton}
+            onPress={() => this.props.navigation.navigate("Login")}
+          >
+            Go back
+          </Text>
         </View>
       );
-    } else if (this.state.data.message && this.state.data.message === "Not Found") {
+    } else if (this.state.data.message === "Not Found") {
       return (
         <View style={styles.errorContainer}>
-          <Text>User not found.</Text>
-          <Text>Go back</Text>
+          <Text style={styles.errorText}>User not found.</Text>
+          <Text
+            style={styles.nakedButton}
+            onPress={() => this.props.navigation.navigate("Login")}
+          >
+            Go back
+          </Text>
         </View>
       );
     }
@@ -74,11 +83,11 @@ class Profile extends React.Component {
           <TextInput
             style={styles.text}
             defaultValue="facebook/react-native" 
-            onChangeText={e => this.setState({ repo: e.target.value })}
+            onChangeText={repo => this.setState({ repo })}
           />
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate(('Welcome'), { username })}
+            onPress={() => this.props.navigation.navigate(('Commit List'), { repo: this.state.repo })}
           >
             <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>

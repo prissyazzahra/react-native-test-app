@@ -6,6 +6,7 @@ import { Text, View, TouchableOpacity, TextInput } from 'react-native';
 import styles from './styles';
 
 export default function Password({ navigation, route }) {
+  const [password, setPassword] = React.useState('');
   const { username } = route.params;
 
   return (

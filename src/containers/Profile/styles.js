@@ -25,7 +25,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 5,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -50,7 +50,7 @@ export default StyleSheet.create({
   },
   button: {
     alignItems: "center",
-    backgroundColor: "#1D66E6",
+    backgroundColor: '#1D66E6',
     padding: 10,
     fontWeight: '500',
     borderRadius: 100,
@@ -70,7 +70,11 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   nakedButton: {
-    color: "#1D66E6",
+    color: '#1D66E6',
+    fontSize: 15,
+  },
+  errorText: {
+    marginBottom: 10,
     fontSize: 15,
   }
 });
