@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 
-import { Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, Image, TouchableOpacity, TextInput, BackHandler, ToastAndroid } from 'react-native';
 
 import styles from './styles';
 
@@ -13,6 +13,11 @@ class Profile extends React.Component {
       error: '',
       repo: 'facebook/react-native',
     }
+  }
+  
+  handleBackButton = () => {
+    ToastAndroid.show("Please log out to go back.", ToastAndroid.SHORT);
+    return true;
   }
 
   async fetchProfile() {
@@ -30,6 +35,11 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.fetchProfile()
+    BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
   }
 
   render() {
@@ -51,8 +61,7 @@ class Profile extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.box}>
-          <Text>Hello,</Text>
-          <Text>{this.state.data.name}!</Text>
+          <Text style={styles.profileText}>Hello, {this.state.data.login}!</Text>
           <Image
             style={styles.image}
             source={{
@@ -73,6 +82,14 @@ class Profile extends React.Component {
           >
             <Text style={styles.buttonText}>Submit</Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.flex}>
+          <Text
+            style={styles.nakedButton}
+            onPress={() => this.props.navigation.navigate("Login")}
+          >
+            Logout
+          </Text>
         </View>
       </View>
     );

@@ -1,6 +1,9 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 
+// React Native imports
+import { Text } from 'react-native';
+
 // React Navigation imports
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,8 +22,19 @@ export default function App() {
         <Stack.Navigator initialRouteName="Login">
           <Stack.Screen name="Login" component={Home}  />
           <Stack.Screen name="Password" component={Password}/>
-          <Stack.Screen name="Welcome" options={{ headerLeft: null }} component={Profile} />
-          <Stack.Screen name="Commit List" options={{ headerLeft: null }} component={List} />
+          <Stack.Screen
+            name="Welcome"
+            options={{ 
+              headerLeft: null,
+              gesturesEnabled: false,
+            }}
+            component={Profile}
+          />
+          <Stack.Screen
+            name="Commit List"
+            options={{ headerLeft: null, gesturesEnabled: false, }}
+            component={List}
+          />
         </Stack.Navigator>
       </NavigationContainer>
   );

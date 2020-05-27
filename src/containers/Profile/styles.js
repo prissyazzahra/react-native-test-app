@@ -34,12 +34,14 @@ export default StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4,
     margin: 20,
-    transform: [{ translateY: -50 }],
+    transform: [{ translateY: -40 }],
     alignItems: 'stretch',
   },
   box: {
+    flex: 1,
     padding: 20,
     backgroundColor: '#3B424E',
+    alignItems: 'center',
   },
   text: {
     borderColor: 'steelblue',
@@ -57,4 +59,18 @@ export default StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
   },
+  profileText: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  flex: {
+    flex: 1.5,
+    alignItems: 'center',
+  },
+  nakedButton: {
+    color: "#1D66E6",
+    fontSize: 15,
+  }
 });
